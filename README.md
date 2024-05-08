@@ -9,9 +9,9 @@ Strona "Tester z Pasją" została stworzona przez Noemi Krysiak-Wolańska jako m
 ## Zawartość
 
 - **index.html**: Główny plik HTML zawierający strukturę strony internetowej.
-- **css/style.css**: Arkusz stylów CSS dla strony.
+- **css**: Arkusze stylów CSS dla strony.
 - **img**: Katalog zawierający wszystkie obrazy używane na stronie.
-- **js/script.js**: Plik JavaScript zawierający interaktywne funkcje dla strony.
+
 
 ## Technologie
 
