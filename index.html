@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Strona poświęcona pasji do testowania i odkrywania świata kodowania.">
+  <meta name="keywords" content="tester, testowanie, kodowanie, programowanie, pasja">
+  <meta name="author" content="Noemi Krysiak-Wolańska">
+  <meta property="og:title" content="Tester z Pasją: Odkrywając Świat Kodowania">
+  <meta property="og:description" content="Strona poświęcona pasji do testowania i odkrywania świata kodowania.">
+  <meta property="og:image" content="img/_RAJ3302.jpg">
+  <title>Tester z Pasją: Odkrywając Świat Kodowania</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.jpg">
+  <script src="https://kit.fontawesome.com/09a5c07aca.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header id="header">
+    <hgroup>
+      <h1>Tester z Pasją:</h1>
+      <h2>Odkrywając Świat Kodowania</h2>
+    </hgroup>
+    <img src="img/_RAJ3302b-removebg-preview.png" alt="Na grafice jest Noemi, twórca tej strony">
+    <nav>
+      <!-- Ikona menu mobilnego -->
+      <div id="mobile-menu-icon">
+        <i class="fa-solid fas fa-bars"></i>
+      </div>
+      <!-- Menu desktopowe -->
+      <ul class="menu-desktop">
+        <li><a href="#aboutMe">O mnie</a></li>
+        <li><a href="#repository">Repozytorium</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div id="arrow" onclick="scrollToAboutMe()">
+      <i class="fa fa-chevron-down"></i>
+    </div>
+    <div id="endSectionHeader"></div>
+  </header>
+
+  <main>
+    <!-- Treść Twojej strony tutaj -->
+    <section id="aboutMe">
+      <h2>O mnie</h2>
+      <p>Cześć! Jestem Noemi i cieszę się, że zajrzałeś(-aś) na moją stronę. W świecie zawodowym pracuję jako Młodszy Tester Oprogramowania, gdzie moją pasją jest weryfikowanie poprawnego działania systemów i wychwytywanie ewentualnych błędów. Po godzinach i w wolnym czasie uwielbiam rozwijać się i poznawać nowe rzeczy. Obecnie skupiam się na nauce HTML i CSS, a także planuję zgłębić tajniki programowania w języku C#. Moim celem jest stworzenie prostej aplikacji, której backend będzie oparty o C#, a frontend w React.</p>
+      <h3>Moje pasje i zainteresowania</h3>
+      <p>Poza sferą zawodową, pasjonuję się podróżami i wspinaczkami, szczególnie uwielbiam podziwiać krajobrazy z najwyższego szczytu Karkonoszy - Śnieżki. Ponadto, jestem miłośniczką świata Star Trek oraz klasyków telewizyjnych takich jak "Przyjaciele", "Biuro", czy "Pępek świata" i "Zwariowany świat Malcolma". Zawsze jestem otwarta na nowe przygody i nowe doświadczenia, dlatego staram się czerpać z życia jak najwięcej radości i inspiracji.</p>
+    </section>
+    <section id="repository">
+      <h2>Portfolio projektów</h2>
+      <div class="projects">
+        <div class="project">
+          <h3>Nazwa projektu 1</h3>
+          <p>Opis projektu 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ligula eu...</p>
+          <a href="#" class="btn" onclick="openLink('link-do-projektu-1')">Zobacz więcej</a>
+        </div>
+        <div class="project">
+          <h3>Nazwa projektu 2</h3>
+          <p>Opis projektu 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ligula eu...</p>
+          <a href="#" class="btn" onclick="openLink('link-do-projektu-2')">Zobacz więcej</a>
+        </div>
+        <!-- Dodaj więcej projektów według potrzeb -->
+      </div>
+    </section>
+    <section id="contact">
+  <div class="socialLink">
+  <h2 class="section-title">Śledź mnie na</h2>
+   <a href="#" class="link" onclick="openLink('https://linkedin.com/in/noemi-krysiak-wolanska')"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="#" class="link" onclick="openLink('https://github.com/noemiwol/')"><i class="fa-brands fa-github"></i></a>
+  </div>
+</section>
+    <div id="endSectionMain"></div>
+  </main>
+
+  <footer>
+    <div class="footer_content">
+      <div class="footer_links">
+        <a href="#about">O mnie</a>
+        <a href="#repository">Repozytorium</a>
+        <a href="#contact">Kontakt</a>
+        <a href="#" class="link" onclick="openLink('polityka_prywatnosci.html')">Polityka prywatności</a>
+      </div>
+      <div class="footer_text">
+        <p>Wszelkie prawa zastrzeżone © 2023 Noemi Krysiak-Wolańska. Kontakt: nkrysiakwolanska@gmail.com</p>
+      </div>
+      <a href="#top" class="scroll-to-top" aria-label="Do góry">&#8679;</a>
+    </div>
+  </footer>
+   <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var mobileMenuIcon = document.getElementById("mobile-menu-icon");
+      var menuDesktop = document.querySelector(".menu-desktop");
+      var arrow = document.getElementById("arrow");
+
+      if (mobileMenuIcon && menuDesktop) {
+        mobileMenuIcon.addEventListener("click", function () {
+          menuDesktop.classList.toggle("active");
+          arrow.style.display = 'none';
+        });
+
+        document.addEventListener("click", function (event) {
+          if (!menuDesktop.contains(event.target) && event.target !== mobileMenuIcon && !mobileMenuIcon.contains(event.target)) {
+            menuDesktop.classList.remove("active");
+            arrow.style.display = 'block';
+          }
+        });
+
+        var menuLinks = document.querySelectorAll("nav a");
+        menuLinks.forEach(function (link) {
+          link.addEventListener("click", function () {
+            arrow.style.display = 'none';
+            menuDesktop.classList.remove("active");
+          });
+        });
+      }
+    });
+
+    function openLink(url) {
+      window.open(url, '_blank');
+    }
+
+    function scrollToAboutMe() {
+      var aboutMeSection = document.getElementById('aboutMe');
+      aboutMeSection.scrollIntoView({
+        behavior: 'smooth'
+      });
+
+      var arrowIcon = document.getElementById('arrow');
+      arrowIcon.style.display = 'none';
+    }
+  </script>
+</body>
+
+</html>
